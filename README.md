@@ -6,7 +6,7 @@ Setup:
 
 - Base URL y Public Key se setean en info.plist
 
-La App fue desarrollada utilizando Swift 4, haciendo énfasis en Protocol Oriented Programming. Diseñé Api Manager para estar totalmente desacoplado del framework de networking (Alamofire en este caso) y ser altamente testeable. Codable protocol y JSONDecoder son usados para parsear los modelos provenientes del backend.  
+La App fue desarrollada utilizando Swift 4, haciendo énfasis en Protocol Oriented Programming. Diseñé ApiManager para estar totalmente desacoplado del framework de networking (Alamofire en este caso) y ser altamente testeable. Codable protocol y JSONDecoder son usados para parsear los modelos provenientes del backend.  
 
 El código está comentado en inglés (como norma general) y en partes significativas.
 
