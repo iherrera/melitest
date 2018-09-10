@@ -14,6 +14,11 @@ class InstallmentsTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Finalizar", style: .done, target: self, action: #selector(endButtonPressed(_:)))
         payment.installments = nil
        
+        getInstallments()
+        
+    }
+    
+    func getInstallments(){
         apiManager.getInstallments(amount: payment.amountString()!, paymentMethodId: payment.payment_method_id!, cardIssuerId: payment.card_issuer_id!, onCompletion: { (installmentResults) in
             if installmentResults.count > 0{
                 self.installments = installmentResults[0].payer_costs
@@ -26,7 +31,6 @@ class InstallmentsTableViewController: UITableViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(alert, animated: true)
         }
-        
     }
     
     @objc func endButtonPressed(_ sender: Any) {

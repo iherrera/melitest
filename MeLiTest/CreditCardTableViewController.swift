@@ -16,7 +16,10 @@ class CreditCardTableViewController: UITableViewController {
         tableView.rowHeight = 50
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Siguiente", style: .done, target: self, action: #selector(nextButtonPressed(_:)))
         payment.payment_method_id = nil
-
+        getCreditCards()
+    }
+    
+    func getCreditCards(){
         apiManager.getPaymentMethods(onCompletion: {(paymentMethods) in
             self.creditCards = paymentMethods.filter{$0.payment_type_id == CreditCardTypeId} //We only want Credit Cards
             self.tableView.reloadData()

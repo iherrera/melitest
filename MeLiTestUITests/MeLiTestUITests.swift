@@ -1,11 +1,3 @@
-//
-//  MeLiTestUITests.swift
-//  MeLiTestUITests
-//
-//  Created by Iván Herrera on 9/5/18.
-//  Copyright © 2018 MercadoLibre. All rights reserved.
-//
-
 import XCTest
 
 class MeLiTestUITests: XCTestCase {

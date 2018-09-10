@@ -14,7 +14,11 @@ class BankTableViewController: UITableViewController {
         tableView.rowHeight = 50
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Siguiente", style: .done, target: self, action: #selector(nextButtonPressed(_:)))
         payment.card_issuer_id = nil
+        getBanks()
 
+    }
+    
+    func getBanks(){
         apiManager.getCardIssuers(paymentMethodId: payment.payment_method_id!, onCompletion: {(cardIssuers) in
             self.banks = cardIssuers
             self.tableView.reloadData()

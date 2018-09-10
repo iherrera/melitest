@@ -21,11 +21,13 @@ enum Endpoint {
         }
     }
     
+    // MARK: - Private Properties
+    
     private var publicKey: String{
         guard let info = Bundle.main.infoDictionary,
             let key = info["Public key"] as? String
             else {
-                fatalError("Cannot get public key from info.plist")
+                fatalError("Can not get public key from info.plist")
         }
         return key
     }
@@ -36,7 +38,7 @@ private extension URL {
         guard let info = Bundle.main.infoDictionary,
             let urlString = info["Base url"] as? String,
             let url = URL(string: urlString) else {
-            fatalError("Cannot get base url from info.plist")
+            fatalError("Can not get base url from info.plist")
         }
         return url
     }
